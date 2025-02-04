@@ -149,6 +149,9 @@ async function handleRequest(req, res, apiBase, apiKey) {
             } else if (functionName === 'news') {
                 functionResponse = await functionToCall(functionArgs.query);
             }
+	    // console.log(functionResponse)
+	    functionResponse = functionResponse.replace("8964","****")
+
             messages.push({
                 tool_call_id: toolCall.id,
                 role: "tool",
